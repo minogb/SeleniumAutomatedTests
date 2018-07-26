@@ -21,20 +21,26 @@ namespace SeleniumTestProject
         }
 
         //Search. All elements related to searching
-        IWebElement SearchBar => Driver.FindElementByClassName("Searchbar-textInput");
-        IWebElement SearchSubmit => Driver.FindElementByClassName("Searchbar-submitInput");
+        public IWebElement SearchBar => Driver.FindElementByClassName("Searchbar-textInput");
+        public IWebElement SearchSubmit => Driver.FindElementByClassName("Searchbar-submitInput");
 
         //Posts. All elements related to posts visible on the front page. including sorting
-        IEnumerable<IWebElement> Posts => Driver.FindElementsByClassName("Grid-column");
-        IWebElement PauseGifsButton => Driver.FindElementByClassName("pause");
-            //Elements in sorting posts
-        IWebElement WatterFallSort => Driver.FindElementByClassName("waterfall");
-        IWebElement UniformSort => Driver.FindElementByClassName("uniform");
-            //These elements are poorly identified
-        IWebElement SelectionTypeSpan => Driver.FindElementByClassName("NewCover-change-sort-wrapper section");
-        IEnumerable<IWebElement> SortBySpan => Driver.FindElementsByClassName("NewCover-change-sort-wrapper").
+        public IEnumerable<IWebElement> Posts => Driver.FindElementsByClassName("Grid-column");
+        public IWebElement PauseGifsButton => Driver.FindElementByClassName("pause");
+        //Elements in sorting posts
+        public IWebElement WatterFallSort => Driver.FindElementByClassName("waterfall");
+        public IWebElement UniformSort => Driver.FindElementByClassName("uniform");
+        //These elements are poorly identified
+        public IWebElement SelectionTypeSpan => Driver.FindElementByClassName("NewCover-change-sort-wrapper section");
+        public IEnumerable<IWebElement> SortBySpan => Driver.FindElementsByClassName("NewCover-change-sort-wrapper").
                                                     Where(span => span.GetAttribute("class").Contains("section"));
+        public IWebElement TakeMeUpButton => Driver.FindElementByClassName("ButtonBackToTop");
 
+        public override void RunBaseTests()
+        {
+            base.RunBaseTests();
+
+        }
 
     }
 }

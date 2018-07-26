@@ -48,7 +48,7 @@ namespace SeleniumTestProject
         /// </summary>
         /// <returns>if we are the correct page</returns>
         public virtual bool IsThis() {
-            return Driver.Url.Substring(BaseUrl.Length).Equals(ExpectedUrl);
+            return Driver.Url.Substring(BaseUrl.Length).Contains(ExpectedUrl);
         }
 
         /// <summary>

@@ -17,7 +17,6 @@ namespace SeleniumTestProject
             PageTitle = "Upload Page";
             SelfAssertErrorMessage = "Not on " + PageTitle;
             PrintLoadingCurrent();
-            driver.Navigate().GoToUrl("https://imgur.com/upload");
         }
         //Main Body
         public IWebElement BrowseButton => Driver.FindElementByClassName("browse-btn");
@@ -35,6 +34,8 @@ namespace SeleniumTestProject
         public override void RunBaseTests()
         {
             base.RunBaseTests();
+
+            Console.WriteLine("Upload page base checks");
 
             Console.WriteLine("module/exit button elements checks");
             Assert.IsTrue(Module.Displayed, "Main module not visible");
